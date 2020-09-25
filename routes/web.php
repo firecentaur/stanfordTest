@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('pos', 'App\Http\Controllers\PosController@getParts');
+Route::get('phpinfo', 'App\Http\Controllers\PosController@phpinfo');

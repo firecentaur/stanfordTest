@@ -25,4 +25,11 @@ class PosController extends Controller
         return $template->render();
 
     }
+    public function phpInfo(Request $request)
+    {
+
+        phpinfo();
+
+    }
+
 }
