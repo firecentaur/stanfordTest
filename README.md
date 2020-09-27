@@ -31,13 +31,13 @@ Once installed correctly on heroku, The sample output should be dispalyed:
  The 	dog 	sheds 	a 	lot
  DT 	NN 	VBZ 	DT 	NN
  
- To use Deploy a Laravel App on Heroku, please go to [https://devcenter.heroku.com/articles/getting-started-with-laravel](https://devcenter.heroku.com/articles/getting-started-with-laravel)
+ If you are unsure on how to Deploy a Laravel App on Heroku there is some good documentation here:[https://devcenter.heroku.com/articles/getting-started-with-laravel](https://devcenter.heroku.com/articles/getting-started-with-laravel)
  
  
- ## Java Requirements
- I found the text below off of Stanfords Webpage that is usefuly when setting up your environment, and what we need to ensure on heroku: 
+ ## Java Requirements for the Stanford Tagger
+ I found the text below off of Stanfords Webpage that is usefull when setting up your environment, and is what we will need to ensure is on heroku: 
 
- "Usage notes
+ "Stanford Tagger Java's Usage notes
   
   The current version of the parser requires Java 8 or later. (You can also download an old version of the parser, version 1.4, which runs under JDK 1.4, version 2.0 which runs under JDK 1.5, version 3.4.1 which runs under JDK 1.6, but those distributions are no longer supported.) The parser also requires a reasonable amount of memory (at least 100MB to run as a PCFG parser on sentences up to 40 words in length; typically around 500MB of memory to be able to parse similarly long typical-of-newswire sentences using the factored model).
   
@@ -46,15 +46,24 @@ Once installed correctly on heroku, The sample output should be dispalyed:
   The download is a 261 MB zipped file (mainly consisting of included grammar data files). If you unpack the zip file, you should have everything needed. Simple scripts are included to invoke the parser on a Unix or Windows system. For another system, you merely need to similarly configure the classpath."""
  
  ## Deliverables
- 
-  1) You need to demonstrate that this demo app properly runs on Heroku, and properly display the output I listed above.
+
+I have posted a job on upwork to get some immediate help on this project. Here is what I am hoping to achieve:
+
+
+  1) Demonstrate that this demo app properly runs on Heroku, and properly displays the output I listed on https://some-address.herokuapp.com/pos
+ The 	dog 	sheds 	a 	lot
+ DT 	NN 	VBZ 	DT 	NN
+
   2) Create a README that illustrates the steps necessary to to get a heroku deploy configured correctly for this app to interface with the Stanford Tagger
+
   3) Commit custom buildpacks and other extensions that are needed for the above
   
 ## Goal
     
-If we can if we this Sample Program working on Heroku, then we will have opened the door to some exciting and powerful technologies.
-By coupling Laravel's slick Queuing Architecture, along with Heroku's ability to scale, Parts of Speech tagging on large volume of text can be achieved.
+For interests sake, I'll just add what my goal is here.  After being asked to convert thousands of lines of text into its constituent pieces, and specify their parts of speech, I came across The Stanford Tagger and got it producing the output that was needed.  In order to scale this however, and be able to process thousands of lines of text, I need to take advantage of Laravel Queing Architecture, and Heroku's Hardware Scaling solutions. 
+
+By coupling these powerful technologies, lots of possibilities exist for language learning apps.
+The only roadblock for me right now, is setting the environment correctly on heroku. 
 
 I hope you can help us move forward to this aim.
 
