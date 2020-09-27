@@ -1,7 +1,7 @@
 
 
 ## Program to test the Stanford Parts of Speech Tagger on a Laravel App deployed on Heroku 
-This is a sample Laravel App that will demonstrate the use of the The Stanford Natural Language Processing Groups's Parts of Speech Tagger.
+This is a sample Laravel App that will demonstrate the use of the The Stanford Natural Language Processing Groups's [Parts of Speech Tagger](https://nlp.stanford.edu/software/tagger.shtml)
 
 The Tagger is actually a Java program, but since Laravel is a PHP Architecture Platform, we will be using [a PHP Wrapper written by Patrick Schur](https://github.com/patrickschur/stanford-nlp-tagger) to interface with the Tagger.
 
