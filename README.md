@@ -1,61 +1,40 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+## Program to test the Stanford Parts of Speech Tagger on a Laravel App deploped on Heroku 
+This is a sample Laravel App that will demonstrate the use of the The Stanford Natural Language Processing Groups's Parts of Speech Tagger.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The Tagger is actually a Java program, but since Laravel is a PHP Architecture Platform, we will be using [a PHP Wrapper written by Patrick Schur](https://github.com/patrickschur/stanford-nlp-tagger) to interface with the Tagger.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+I have created a web endpoint to Test the tagger at the following endoint of the app  http://localhost/pos/
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This endpoint should display two table rows with the following: 
+ 
+ The 	dog 	sheds 	a 	lot
+ DT 	NN 	VBZ 	DT 	NN
+ 
+ 
+ The above works properly when I run it from my local machine.
+ I am unable, however to get this running on heroku.
+ I am looking for contributors to help me to properly get this test software working properly on heroku.  This may in a heroku buildpack and installing the correct modules for the stanford tagger to work.  To get it working on my local machine, I had to do the following:
+ 
+ * Install php7.3
+ * Install [php7.3-psell](https://packages.debian.org/buster/php7.3-pspell)
+ * Install Java
+ 
+ From The stanford page, I found this text regarding Java requirments
+ 
+ "Usage notes
+  
+  The current version of the parser requires Java 8 or later. (You can also download an old version of the parser, version 1.4, which runs under JDK 1.4, version 2.0 which runs under JDK 1.5, version 3.4.1 which runs under JDK 1.6, but those distributions are no longer supported.) The parser also requires a reasonable amount of memory (at least 100MB to run as a PCFG parser on sentences up to 40 words in length; typically around 500MB of memory to be able to parse similarly long typical-of-newswire sentences using the factored model).
+  
+  The parser is available for download, licensed under the GNU General Public License (v2 or later). Source is included. The package includes components for command-line invocation, a Java parsing GUI, and a Java API.
+  
+  The download is a 261 MB zipped file (mainly consisting of included grammar data files). If you unpack the zip file, you should have everything needed. Simple scripts are included to invoke the parser on a Unix or Windows system. For another system, you merely need to similarly configure the classpath."""
+ 
+ 
+  
+My hope is that, with this test, if we can get the Stanford Tagger working on Heroku through laravel, we can harness powerful text processing through the use of Laravel Queues and Heroku Scaling abilities.
 
-## Learning Laravel
+I will be posting a job on Upwork at the moment to see if I can find some immediate help with this.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
